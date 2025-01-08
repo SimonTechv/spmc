@@ -1,11 +1,13 @@
 
 
-OpenDocument="main.c", FilePath="C:/Users/SimTech/vscode/spmc/core/main.c", Line=0
+Breakpoint=C:/Users/SimTech/vscode/spmc/core/main.c:54:1, State=BP_STATE_DISABLED
+OpenDocument="startup_efm32zg.c", FilePath="C:/Users/SimTech/vscode/spmc/sdk/platform/Device/SiliconLabs/EFM32ZG/Source/startup_efm32zg.c", Line=183
+OpenDocument="main.c", FilePath="C:/Users/SimTech/vscode/spmc/core/main.c", Line=12
 OpenToolbar="Debug", Floating=0, x=0, y=0
 OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=0, w=851, h=1227, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
-OpenWindow="Break & Tracepoints", DockArea=LEFT, x=0, y=0, w=355, h=953, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, VectorCatchIndexMask=254
-OpenWindow="Watched Data 1", DockArea=LEFT, x=0, y=1, w=355, h=273, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
-OpenWindow="Timeline", DockArea=BOTTOM, x=0, y=0, w=2880, h=341, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=1, DataPaneShown=1, PowerPaneShown=1, CodePaneShown=1, PinCursor="Cursor Movable", TimePerDiv="1 ns / Div", TimeStampFormat="Time", DataGraphDrawAsPoints=0, DataGraphLegendShown=1, DataGraphUniformSampleSpacing=0, DataGraphLegendPosition="2593;0", DataGraphShowNamesAtCursor=0, PowerGraphDrawAsPoints=0, PowerGraphLegendShown=1, PowerGraphAvgFilterTime=Off, PowerGraphAvgFilterLen=Off, PowerGraphUniformSampleSpacing=0, PowerGraphLegendPosition="2595;0", CodeGraphLegendShown=1, CodeGraphLegendPosition="2540;0"
+OpenWindow="Break & Tracepoints", DockArea=LEFT, x=0, y=0, w=355, h=934, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, VectorCatchIndexMask=254
+OpenWindow="Watched Data 1", DockArea=LEFT, x=0, y=1, w=355, h=292, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Timeline", DockArea=BOTTOM, x=0, y=0, w=2880, h=341, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=1, DataPaneShown=1, PowerPaneShown=1, CodePaneShown=1, PinCursor="Cursor Movable", TimePerDiv="1 ns / Div", TimeStampFormat="Time", DataGraphDrawAsPoints=0, DataGraphLegendShown=1, DataGraphUniformSampleSpacing=0, DataGraphLegendPosition="2594;0", DataGraphShowNamesAtCursor=0, PowerGraphDrawAsPoints=0, PowerGraphLegendShown=1, PowerGraphAvgFilterTime=Off, PowerGraphAvgFilterLen=Off, PowerGraphUniformSampleSpacing=0, PowerGraphLegendPosition="2595;-99", CodeGraphLegendShown=1, CodeGraphLegendPosition="2540;0"
 SmartViewPlugin="", Page="", Toolbar="Hidden", Window="SmartView 1"
 TableHeader="Vector Catches", SortCol="", SortOrder="ASCENDING", VisibleCols=["";"Vector Catch";"Description"], ColWidths=[50;300;500]
 TableHeader="Break & Tracepoints", SortCol="", SortOrder="DESCENDING", VisibleCols=["";"Type";"Location";"Extras"], ColWidths=[100;100;127;107]

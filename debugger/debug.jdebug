@@ -5,7 +5,7 @@
 **********************************************************************
 
 File          : C:/Users/SimTech/vscode/spmc/debugger/debug.jdebug
-Created       : 7 Jan 2025 23:26
+Created       : 8 Jan 2025 20:10
 Ozone Version : V3.38a
 */
 
@@ -33,7 +33,7 @@ void OnProjectLoad (void) {
   //
   // User settings
   //
-  File.Open ("C:/Users/SimTech/vscode/spmc/build/smpc");
+  File.Open ("C:/Users/SimTech/vscode/spmc/build/smpc-elf");
 }
 
 /*********************************************************************

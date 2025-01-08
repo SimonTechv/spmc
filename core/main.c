@@ -22,19 +22,40 @@
 #include "em_gpio.h"
 #include "em_chip.h"
 
+#include "pins.h"
+
+/**
+ * Temporary prototypes
+ */
+void configureIO(void);
+
+
 int main(void)
 {
 
   CHIP_Init();
 
-  /* Enable GPIO peripheral unit */
-  CMU_ClockEnable(cmuClock_GPIO, true);
+  /* Configure peripheral GPIO functions */
+  configureIO();
 
-  GPIO_PinModeSet(gpioPortC, 13, gpioModePushPull, 0);
-  GPIO_PinOutSet(gpioPortC, 13);
+  GPIO_PinOutSet(REL_PORT, REL_SET_PIN);
+
 
   for(;;)
   {
 
   }
+}
+
+/**
+ * Configure MCU GPIO pins
+ */
+void configureIO()
+{
+  /* Enable GPIO peripheral unit */
+  CMU_ClockEnable(cmuClock_GPIO, true);
+
+  /* Relay control GPIO */
+  GPIO_PinModeSet(REL_PORT, REL_SET_PIN, gpioModePushPull, 0);
+  GPIO_PinModeSet(REL_PORT, REL_RESET_PIN, gpioModePushPull, 0);
 }
