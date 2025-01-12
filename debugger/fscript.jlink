@@ -1,0 +1,8 @@
+
+loadbin build/smpc-elf.bin 0x0
+r
+g
+q
+
+
+

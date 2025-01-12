@@ -18,6 +18,7 @@ set(EFM32SDKSRC
     sdk/platform/emlib/src/em_rtc.c
     sdk/platform/emlib/src/em_system.c
     sdk/platform/emlib/src/em_timer.c
+    sdk/platform/emlib/src/em_i2c.c
 )
 
 # Setting SDK includes
@@ -37,4 +38,15 @@ set(EFM32CORESRC
 # Core application include
 set(EFM32COREINC
     core/
+)
+
+
+# Core library sources
+set(EFM32LIBSRC
+    lib/EEPROM/src/eeprom.c
+)
+
+# Core library include
+set(EFM32LIBINC
+    lib/EEPROM/inc
 )

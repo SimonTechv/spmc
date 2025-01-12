@@ -14,10 +14,10 @@ set(CXX_STANDARD 11)
 include(sources.cmake)
 
 # Set executable output file
-add_executable(${EXEC} ${EFM32SDKSRC} ${EFM32CORESRC})
+add_executable(${EXEC} ${EFM32SDKSRC} ${EFM32CORESRC} ${EFM32LIBSRC})
 
 # Set include directories
-target_include_directories(${EXEC} PRIVATE ${EFM32SDKINC} ${EFM32COREINC})
+target_include_directories(${EXEC} PRIVATE ${EFM32SDKINC} ${EFM32COREINC} ${EFM32LIBINC})
 
 # Defines for SiliconLabs SDK libraries
 target_compile_definitions(${EXEC} PUBLIC

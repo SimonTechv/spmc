@@ -1,1 +1,1 @@
-JFlash.exe -openprj debugger/flash.jflash -open build/smpc-elf.bin,0x0 -auto -exit
+JLink.exe -device EFM32ZG210F32 -if swd -speed 500 -commanderscript debugger/fscript.jlink
