@@ -38,6 +38,7 @@ target_compile_options(${EXEC} PRIVATE
     -Wall
     -g 
     -gdwarf-2 
+    -Og
 )
 
 # Link options

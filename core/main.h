@@ -5,6 +5,6 @@
  * Global initialize functions
  */
 void configureIO(void);
-
+void configureI2C(void);
 
 #endif

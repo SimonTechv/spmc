@@ -23,10 +23,12 @@
 #include "em_chip.h"
 #include "em_i2c.h"
 
+#include "main.h"
 #include "pins.h"
 #include "eeprom.h"
 
-
+/* Global variables */
+I2C_TypeDef I2C0_handle;
 
 
 int main(void)
@@ -36,6 +38,7 @@ int main(void)
 
   /* Configure peripheral GPIO functions */
   configureIO();
+  configureI2C();
 
   /* Enable DC-DC */
   GPIO_PinOutSet(TPS61040_EN_PORT, TPS61040_EN_PIN);
@@ -71,13 +74,26 @@ void configureIO()
  */
 void configureI2C()
 {
+
+  I2C_Init_TypeDef I2C0_InitHandle = I2C_INIT_DEFAULT;
+
+  /* Set I2C periphery parameters */
+  I2C0_InitHandle.enable                    = 1;
+  I2C0_InitHandle.master                    = 1;
+  I2C0_InitHandle.freq                      = I2C_FREQ_STANDARD_MAX;
+  I2C0_InitHandle.clhr                      = i2cClockHLRStandard;
+
   /* Enable I2C periphery */
   CMU_ClockEnable(cmuClock_I2C0, true);
 
   /* Configure I2C0 periphery GPIO lines (external pull & open drain) */
-  GPIO_PinModeSet(I2C0_PORT, I2C0_SCL_PIN, gpioModeWiredAnd, 1);
-  GPIO_PinModeSet(I2C0_PORT, I2C0_SDA_PIN, gpioModeWiredAnd, 1);
+  GPIO_PinModeSet(I2C0_PORT, I2C0_SCL_PIN, gpioModeWiredAndFilter, 1);
+  GPIO_PinModeSet(I2C0_PORT, I2C0_SDA_PIN, gpioModeWiredAndFilter, 1);
 
-  
-  
+  /* Perform routing */
+  I2C0->ROUTE = I2C_ROUTE_SDAPEN | I2C_ROUTE_SCLPEN;
+  I2C0->ROUTE = (I2C0->ROUTE & (~_I2C_ROUTE_LOCATION_MASK)) | I2C_ROUTE_LOCATION_LOC0;
+
+  /* Perform init */
+  I2C_Init(&I2C0_handle, &I2C0_InitHandle);
 }
