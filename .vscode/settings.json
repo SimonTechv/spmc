@@ -9,7 +9,8 @@
       "stdbool.h": "c",
       "sl_assert.h": "c",
       "main.h": "c",
-      "eeprom.h": "c"
+      "eeprom.h": "c",
+      "em_i2c.h": "c"
     },
 
     "cmake.configureOnOpen": false,

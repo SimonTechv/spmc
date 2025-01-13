@@ -27,8 +27,9 @@
 #include "pins.h"
 #include "eeprom.h"
 
-/* Global variables */
-I2C_TypeDef I2C0_handle;
+
+uint8_t i2c_txBuffer[1] = {0xAB};
+uint8_t i2c_rxBuffer[1];
 
 
 int main(void)
@@ -43,8 +44,30 @@ int main(void)
   /* Enable DC-DC */
   GPIO_PinOutSet(TPS61040_EN_PORT, TPS61040_EN_PIN);
 
+  /* Test EEPROM slave address ACK*/
+  I2C_TransferSeq_TypeDef t = {0};
+
+  t.addr = 0x50;
+  t.flags = I2C_FLAG_READ;
+
+  t.buf[0].data = i2c_txBuffer;
+  t.buf[0].len  = 1;
+
+  t.buf[1].data = i2c_rxBuffer;
+  t.buf[1].len  = 1;
+
+  I2C_TransferReturn_TypeDef result = I2C_TransferInit(I2C0, &t);
+  
+  while (result == i2cTransferInProgress)
+  {
+    result = I2C_Transfer(I2C0);
+  }
+  
+  __NOP();
+
   for(;;)
   {
+    
 
 
   }
@@ -78,8 +101,8 @@ void configureI2C()
   I2C_Init_TypeDef I2C0_InitHandle = I2C_INIT_DEFAULT;
 
   /* Set I2C periphery parameters */
-  I2C0_InitHandle.enable                    = 1;
-  I2C0_InitHandle.master                    = 1;
+  I2C0_InitHandle.enable                    = true;
+  I2C0_InitHandle.master                    = true;
   I2C0_InitHandle.freq                      = I2C_FREQ_STANDARD_MAX;
   I2C0_InitHandle.clhr                      = i2cClockHLRStandard;
 
@@ -87,13 +110,20 @@ void configureI2C()
   CMU_ClockEnable(cmuClock_I2C0, true);
 
   /* Configure I2C0 periphery GPIO lines (external pull & open drain) */
-  GPIO_PinModeSet(I2C0_PORT, I2C0_SCL_PIN, gpioModeWiredAndFilter, 1);
-  GPIO_PinModeSet(I2C0_PORT, I2C0_SDA_PIN, gpioModeWiredAndFilter, 1);
+  GPIO_PinModeSet(I2C0_PORT, I2C0_SCL_PIN, gpioModeWiredAndPullUp, 1);
+  GPIO_PinModeSet(I2C0_PORT, I2C0_SDA_PIN, gpioModeWiredAndPullUp, 1);
 
   /* Perform routing */
   I2C0->ROUTE = I2C_ROUTE_SDAPEN | I2C_ROUTE_SCLPEN;
-  I2C0->ROUTE = (I2C0->ROUTE & (~_I2C_ROUTE_LOCATION_MASK)) | I2C_ROUTE_LOCATION_LOC0;
+  I2C0->ROUTE = (I2C0->ROUTE & (~_I2C_ROUTE_LOCATION_MASK)) | I2C_ROUTE_LOCATION_LOC4;
 
   /* Perform init */
-  I2C_Init(&I2C0_handle, &I2C0_InitHandle);
+  I2C_Init(I2C0, &I2C0_InitHandle);
+
+  I2C_IntClear(I2C0, 0xff);
+}
+
+void ConfigurePeripheryClock(void)
+{
+
 }

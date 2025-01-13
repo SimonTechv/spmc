@@ -6,5 +6,6 @@
  */
 void configureIO(void);
 void configureI2C(void);
+void ConfigurePeripheryClock(void);
 
 #endif
