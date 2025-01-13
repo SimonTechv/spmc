@@ -1,15 +1,13 @@
 
 
-Breakpoint=C:/Users/SimTech/vscode/spmc/core/main.c:66, State=BP_STATE_DISABLED
-OpenDocument="debug.jdebug", FilePath="C:/Users/SimTech/vscode/spmc/debugger/debug.jdebug", Line=0
-OpenDocument="main.c", FilePath="C:/Users/SimTech/vscode/spmc/core/main.c", Line=20
-OpenDocument="sl_assert.c", FilePath="C:/Users/SimTech/vscode/spmc/sdk/platform/common/src/sl_assert.c", Line=22
-OpenDocument="startup_efm32zg.c", FilePath="C:/Users/SimTech/vscode/spmc/sdk/platform/Device/SiliconLabs/EFM32ZG/Source/startup_efm32zg.c", Line=168
-OpenDocument="em_i2c.c", FilePath="C:/Users/SimTech/vscode/spmc/sdk/platform/emlib/src/em_i2c.c", Line=510
+OpenDocument="em_i2c.h", FilePath="C:/Users/SimTech/vscode/spmc/sdk/platform/emlib/inc/em_i2c.h", Line=286
+OpenDocument="em_i2c.c", FilePath="C:/Users/SimTech/vscode/spmc/sdk/platform/emlib/src/em_i2c.c", Line=793
+OpenDocument="startup_efm32zg.c", FilePath="C:/Users/SimTech/vscode/spmc/sdk/platform/Device/SiliconLabs/EFM32ZG/Source/startup_efm32zg.c", Line=184
+OpenDocument="main.c", FilePath="C:/Users/SimTech/vscode/spmc/core/main.c", Line=23
 OpenToolbar="Debug", Floating=0, x=0, y=0
-OpenWindow="Call Stack", DockArea=RIGHT, x=0, y=0, w=851, h=481, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
-OpenWindow="Registers 1", DockArea=RIGHT, x=0, y=1, w=851, h=542, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, FilteredItems=[], RefreshRate=1
-OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=2, w=851, h=202, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Call Stack", DockArea=RIGHT, x=0, y=0, w=1368, h=133, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Registers 1", DockArea=RIGHT, x=0, y=1, w=1368, h=890, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, FilteredItems=[], RefreshRate=1
+OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=2, w=1368, h=202, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
 OpenWindow="Break & Tracepoints", DockArea=LEFT, x=0, y=1, w=434, h=507, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, VectorCatchIndexMask=190
 OpenWindow="Watched Data 1", DockArea=LEFT, x=0, y=2, w=434, h=278, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
 OpenWindow="Call Graph", DockArea=LEFT, x=0, y=0, w=434, h=440, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
@@ -17,10 +15,10 @@ OpenWindow="Timeline", DockArea=BOTTOM, x=0, y=0, w=2880, h=341, FilterBarShown=
 SmartViewPlugin="", Page="", Toolbar="Hidden", Window="SmartView 1"
 TableHeader="Vector Catches", SortCol="", SortOrder="ASCENDING", VisibleCols=["";"Vector Catch";"Description"], ColWidths=[50;300;500]
 TableHeader="Break & Tracepoints", SortCol="", SortOrder="DESCENDING", VisibleCols=["";"Type";"Location";"Extras"], ColWidths=[100;100;127;107]
-TableHeader="Call Stack", SortCol="Function", SortOrder="ASCENDING", VisibleCols=["Function";"Stack Frame";"Source";"PC";"Return Address";"Stack Used"], ColWidths=[146;183;190;131;196;127]
+TableHeader="Call Stack", SortCol="Function", SortOrder="ASCENDING", VisibleCols=["Function";"Stack Frame";"Source";"PC";"Return Address";"Stack Used"], ColWidths=[146;183;190;131;196;522]
 TableHeader="Call Graph", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Stack Total";"Stack Local";"Code Total";"Code Local";"Depth";"Called From"], ColWidths=[273;150;154;147;151;106;162]
 TableHeader="Power Sampling", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time";"Ch 0"], ColWidths=[100;100;100]
-TableHeader="Registers 1", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Description"], ColWidths=[256;183;399]
+TableHeader="Registers 1", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Description"], ColWidths=[256;387;691]
 TableHeader="Watched Data 1", SortCol="Expression", SortOrder="ASCENDING", VisibleCols=["Expression";"Value";"Location";"Refresh"], ColWidths=[123;100;101;110]
 TableHeader="RegisterSelectionDialog", SortCol="None", SortOrder="ASCENDING", VisibleCols=[], ColWidths=[]
 TableHeader="TargetExceptionDialog", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Address";"Description"], ColWidths=[26;26;26;59]

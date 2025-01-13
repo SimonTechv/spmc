@@ -4,6 +4,9 @@
 #include "em_cmu.h"
 #include "em_gpio.h"
 
+/* IIC bus addresses */
+#define EEPROM_ADDR         0x50
+
 /* GPIO reg CMU def */
 #define GPIO_CMU_CLK        cmuClock_GPIO 
 
