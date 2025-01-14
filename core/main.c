@@ -12,8 +12,9 @@
 #include "main.h"
 #include "pins.h"
 
-uint8_t i2c_txBuffer[1] = {0xAB};
-uint8_t i2c_rxBuffer[1];
+
+uint8_t byte_array_dec[64u] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63};
+
 
 int main(void) {
 
@@ -26,8 +27,10 @@ int main(void) {
   /* Enable DC-DC */
   GPIO_PinOutSet(TPS61040_EN_PORT, TPS61040_EN_PIN);
 
-  EEPROMByteProg(0x0000, 0xAB);
-  EEPROMByteProg(0x0000, 0xAB);
+  uint8_t readbuf[32] = {0};
+
+  // EEPROMWrite(0x1F, byte_array_dec, 10);
+
   __NOP();
 
   for (;;) {
