@@ -11,8 +11,9 @@
     "main.h": "c",
     "eeprom.h": "c",
     "em_i2c.h": "c",
-    "pins.h": "c"
-  },
+    "pins.h": "c",
+    "common_types.h": "c"
+},
   "editor.formatOnSave": false,
   "cmake.configureOnOpen": false,
   "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",

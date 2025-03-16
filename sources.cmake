@@ -43,10 +43,17 @@ set(EFM32COREINC
 
 # Core library sources
 set(EFM32LIBSRC
+
     lib/EEPROM/src/eeprom.c
+
+    lib/EEFS/src/eefs_fileapi.c
+    lib/EEFS/src/eefs_filesys.c
 )
 
 # Core library include
 set(EFM32LIBINC
+
     lib/EEPROM/inc
+
+    lib/EEFS/inc
 )
