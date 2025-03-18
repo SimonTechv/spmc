@@ -40,6 +40,7 @@
 ** Includes
 */
 #include "stdint.h"
+
 /*
 ** Macro Definitions
 */

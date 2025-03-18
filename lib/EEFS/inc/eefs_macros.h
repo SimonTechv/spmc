@@ -24,13 +24,15 @@
 #ifndef _eefs_macros_
 #define	_eefs_macros_
 
+#include "eeprom.h"
+
 /*
  * System Dependent Lower Level Functions
  */
 
 /* These macros define the lower level EEPROM interface functions.  Defaults to memcpy(Dest, Src, Length) */
-#define EEFS_LIB_EEPROM_WRITE(Dest, Src, Length) memcpy(Dest, Src, Length)
-#define EEFS_LIB_EEPROM_READ(Dest, Src, Length)  memcpy(Dest, Src, Length)
+#define EEFS_LIB_EEPROM_WRITE(Dest, Src, Length) EEPROMWrite((uint16_t)Dest, (uint8_t*)Src, (uint16_t)Length)
+#define EEFS_LIB_EEPROM_READ(Dest, Src, Length)  EEPROMRead((uint16_t)Src, (uint8_t*)Dest, (uint16_t)Length)
 #define EEFS_LIB_EEPROM_FLUSH
 
 /* These macros define the lock and unlock interface functions used to guarentee
