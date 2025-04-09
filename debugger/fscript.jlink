@@ -1,5 +1,5 @@
 
-loadbin build/smpc-elf.bin 0x0
+loadbin build/smpc.bin 0x0
 r
 g
 q

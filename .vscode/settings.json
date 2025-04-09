@@ -13,7 +13,8 @@
     "em_i2c.h": "c",
     "pins.h": "c",
     "common_types.h": "c",
-    "eefs_filesys.h": "c"
+    "eefs_filesys.h": "c",
+    "wscript" : "python"
 },
   "editor.formatOnSave": false,
   "cmake.configureOnOpen": false,

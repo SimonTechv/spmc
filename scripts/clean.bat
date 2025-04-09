@@ -1,8 +1,8 @@
 @echo off
 echo Configuring and building Waf project...
 
-REM Сборка
-python -B sys/waf-ex build
+REM Очистка
+python -B sys/waf-ex distclean
 if %ERRORLEVEL% NEQ 0 (
     echo Build failed!
     pause
