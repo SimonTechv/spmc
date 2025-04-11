@@ -14,7 +14,8 @@
     "pins.h": "c",
     "common_types.h": "c",
     "eefs_filesys.h": "c",
-    "wscript" : "python"
+    "wscript": "python",
+    "segger_rtt.h": "c"
 },
   "editor.formatOnSave": false,
   "cmake.configureOnOpen": false,

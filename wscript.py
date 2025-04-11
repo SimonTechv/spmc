@@ -37,7 +37,7 @@ def build(bld):
         '-fmessage-length=0',
         '-g',
         '-gdwarf-2',
-        '-O',
+        '-Og',
         '-std=c11',
     ]
 

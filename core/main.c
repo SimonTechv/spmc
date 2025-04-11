@@ -12,34 +12,37 @@
 #include "main.h"
 #include "pins.h"
 
+#include "SEGGER_RTT.h"
+
 #include "eefs_filesys.h"
 
 
-uint8_t byte_array_dec[64u] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63};
-
+uint8_t rtt_buff[256];
 
 int main(void) {
 
   CHIP_Init();
 
+  /* Configure RTT buffer */
+  int res = SEGGER_RTT_ConfigUpBuffer(0, NULL, rtt_buff, 256, SEGGER_RTT_MODE_NO_BLOCK_SKIP);
+
+  SEGGER_RTT_printf(0, "MCU started...\n", res);
+
   /* Configure peripheral GPIO functions */
   configureIO();
   configureI2C();
 
+  SEGGER_RTT_printf(0, "GPIO configured...\n", res);
+
   /* Enable DC-DC */
   GPIO_PinOutSet(TPS61040_EN_PORT, TPS61040_EN_PIN);
-
-  uint8_t readbuf[32] = {0};
-
-  /* Init filesystem */
-  EEFS_InitFS("/EEPROM", (uint16)0x0000);
-
-  /* Mount filesystem */
-  EEFS_Mount("/EERPOM", "/FS0");
-
-  __NOP();
-
+  SEGGER_RTT_printf(0, "TPS61040 run...\n", res);
+  
   for (;;) {
+
+    for(uint32_t i = 0; i  < 10000000; i++) {}
+
+    SEGGER_RTT_printf(0, "NOP...\n", res);
   }
 }
 
@@ -56,7 +59,7 @@ void configureIO()
   GPIO_PinModeSet(REL_PORT, REL_RESET_PIN, gpioModePushPull, 0);
 
   /* DC-DC */
-  GPIO_PinModeSet(TPS61040_EN_PORT, TPS61040_EN_PIN, gpioModePushPull, 0);
+//   GPIO_PinModeSet(TPS61040_EN_PORT, TPS61040_EN_PIN, gpioModePushPull, 0);
 }
 
 /**
@@ -87,5 +90,3 @@ void configureI2C() {
   /* Perform init */
   I2C_Init(I2C0, &I2C0_InitHandle);
 }
-
-void ConfigurePeripheryClock(void) {}

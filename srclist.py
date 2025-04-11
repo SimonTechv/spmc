@@ -3,6 +3,10 @@
 linkerfile = 'sdk/ldscript/linkerfile.ld'
 
 inc = {
+    'segger_includes': [
+        'lib/SeggerRTT/Inc'
+    ],
+
     'sdk_includes' : [
         'sdk/platform/common/inc',
         'sdk/platform/common/toolchain/inc',
@@ -26,6 +30,12 @@ inc = {
 
 
 src = {
+    'segger_sources': [
+        'lib/SeggerRTT/Src/SEGGER_RTT_ASM_ARMv7M.S',
+        'lib/SeggerRTT/Src/SEGGER_RTT_printf.c',
+        'lib/SeggerRTT/Src/SEGGER_RTT.c'
+    ],
+
     'sdk_sources' : [
         'sdk/platform/emlib/src/em_cmu.c',
         'sdk/platform/emlib/src/em_core.c',
