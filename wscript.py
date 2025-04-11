@@ -9,14 +9,14 @@ def options(opt):
 
 
 def configure(conf): 
-    conf.find_program('arm-none-eabi-gcc', var='CC')            # Компилятор С
-    conf.find_program('arm-none-eabi-gcc', var='AS')            # Транслятор Assmbler
-    conf.find_program('arm-none-eabi-gcc', var='LINK_CC')       # Компоновщик
-    conf.find_program('arm-none-eabi-ar',  var='AR')            # Архиватор
-    conf.find_program('arm-none-eabi-objcopy', var='OBJCOPY')   # Даватор .hex и .bin
-    conf.find_program('arm-none-eabi-size', var='SIZE')         # Вычислит размер исходника
-
     
+    conf.find_program([r'C:/Cross Compilers/12.2.rel1_2023.7/bin/arm-none-eabi-gcc'], var='CC')            # Компилятор С
+    conf.find_program([r'C:/Cross Compilers/12.2.rel1_2023.7/bin/arm-none-eabi-gcc'], var='AS')            # Транслятор Assmbler
+    conf.find_program([r'C:/Cross Compilers/12.2.rel1_2023.7/bin/arm-none-eabi-gcc'], var='LINK_CC')       # Компоновщик
+    conf.find_program([r'C:/Cross Compilers/12.2.rel1_2023.7/bin/arm-none-eabi-ar'],  var='AR')            # Архиватор
+    conf.find_program([r'C:/Cross Compilers/12.2.rel1_2023.7/bin/arm-none-eabi-objcopy'], var='OBJCOPY')   # Даватор .hex и .bin
+    conf.find_program([r'C:/Cross Compilers/12.2.rel1_2023.7/bin/arm-none-eabi-size'], var='SIZE')         # Вычислит размер исходника
+
     conf.load('gcc gas') # Подгружаем тулчейн GCC
 
 def build(bld):
@@ -65,9 +65,9 @@ def build(bld):
         lib=['m', 'c']                  # Библиотеки (стандартные)
     )
 
-    # Выходные .bin и .hex
-    bld(rule='${OBJCOPY} -O binary ${SRC} ${TGT}', source=f'{app_name}.elf', target=f'{app_name}.bin')
-    bld(rule='${OBJCOPY} -O ihex ${SRC} ${TGT}', source=f'{app_name}.elf', target=f'{app_name}.hex')
+    # Output .bin и .hex
+    bld(rule='"${OBJCOPY}" -O binary ${SRC} ${TGT}', source=f'{app_name}.elf', target=f'{app_name}.bin')
+    bld(rule='"${OBJCOPY}" -O ihex ${SRC} ${TGT}', source=f'{app_name}.elf', target=f'{app_name}.hex')
 
-    # Простой вывод размеров .elf
-    bld(rule='${SIZE} ${SRC}', source=f'{app_name}.elf', always=True)
+    # Sizes .elf
+    bld(rule='"${SIZE}" ${SRC}', source=f'{app_name}.elf', always=True)
