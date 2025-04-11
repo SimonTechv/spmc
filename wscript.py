@@ -66,8 +66,8 @@ def build(bld):
     )
 
     # Output .bin и .hex
-    bld(rule='"${OBJCOPY}" -O binary ${SRC} ${TGT}', source=f'{app_name}.elf', target=f'{app_name}.bin')
-    bld(rule='"${OBJCOPY}" -O ihex ${SRC} ${TGT}', source=f'{app_name}.elf', target=f'{app_name}.hex')
+    bld(rule='${OBJCOPY} -O binary ${SRC} ${TGT}', source=f'{app_name}.elf', target=f'{app_name}.bin', shell=False)
+    bld(rule='${OBJCOPY} -O ihex ${SRC} ${TGT}', source=f'{app_name}.elf', target=f'{app_name}.hex', shell=False)
 
     # Sizes .elf
-    bld(rule='"${SIZE}" ${SRC}', source=f'{app_name}.elf', always=True)
+    bld(rule='${SIZE} ${SRC}', source=f'{app_name}.elf', always=True, shell=False)
