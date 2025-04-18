@@ -15,8 +15,10 @@
     "common_types.h": "c",
     "eefs_filesys.h": "c",
     "wscript": "python",
-    "segger_rtt.h": "c"
-},
+    "segger_rtt.h": "c",
+    "log.h": "c",
+    "init.h": "c"
+  },
   "editor.formatOnSave": false,
   "cmake.configureOnOpen": false,
   "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",

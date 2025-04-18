@@ -58,7 +58,8 @@ src = {
     ],
 
     'core_sources' : [
-        'core/main.c'
+        'core/main.c',
+        'core/init.c'
     ],
 
     'lib_sources' : [

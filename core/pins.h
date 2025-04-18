@@ -1,8 +1,10 @@
 #ifndef PINS_H
 #define PINS_H
 
-#include "em_cmu.h"
-#include "em_gpio.h"
+
+#include <em_cmu.h>
+#include <em_gpio.h>
+
 
 /* IIC bus addresses */
 #define EEPROM_ADDR         0x50
@@ -24,7 +26,6 @@
 #define REL_SET_PIN         14
 #define REL_RESET_PIN       8
 #define REL_PORT            gpioPortB
-
 
 
 #endif
