@@ -10,12 +10,12 @@ def options(opt):
 
 def configure(conf): 
     
-    conf.find_program([r'C:/Cross Compilers/12.2.rel1_2023.7/bin/arm-none-eabi-gcc'], var='CC')            # Компилятор С
-    conf.find_program([r'C:/Cross Compilers/12.2.rel1_2023.7/bin/arm-none-eabi-gcc'], var='AS')            # Транслятор Assmbler
-    conf.find_program([r'C:/Cross Compilers/12.2.rel1_2023.7/bin/arm-none-eabi-gcc'], var='LINK_CC')       # Компоновщик
-    conf.find_program([r'C:/Cross Compilers/12.2.rel1_2023.7/bin/arm-none-eabi-ar'],  var='AR')            # Архиватор
-    conf.find_program([r'C:/Cross Compilers/12.2.rel1_2023.7/bin/arm-none-eabi-objcopy'], var='OBJCOPY')   # Даватор .hex и .bin
-    conf.find_program([r'C:/Cross Compilers/12.2.rel1_2023.7/bin/arm-none-eabi-size'], var='SIZE')         # Вычислит размер исходника
+    conf.find_program([r'arm-none-eabi-gcc'], var='CC')            # Компилятор С
+    conf.find_program([r'arm-none-eabi-gcc'], var='AS')            # Транслятор Assmbler
+    conf.find_program([r'arm-none-eabi-gcc'], var='LINK_CC')       # Компоновщик
+    conf.find_program([r'arm-none-eabi-ar'],  var='AR')            # Архиватор
+    conf.find_program([r'arm-none-eabi-objcopy'], var='OBJCOPY')   # Даватор .hex и .bin
+    conf.find_program([r'arm-none-eabi-size'], var='SIZE')         # Вычислит размер исходника
 
     conf.load('gcc gas') # Подгружаем тулчейн GCC
 
