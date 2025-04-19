@@ -8,6 +8,8 @@
 
 /* IIC bus addresses */
 #define EEPROM_ADDR         0x50
+#define OPT3001_ADDR        0x44
+#define TMP102_ADDR         0x48
 
 /* GPIO reg CMU def */
 #define GPIO_CMU_CLK        cmuClock_GPIO 

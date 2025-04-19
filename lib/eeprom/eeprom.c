@@ -141,10 +141,6 @@ void EEPROMRead(uint16_t address, uint8_t *rxbuf, uint16_t size)
 
 static void EEPROMBusTransfer(I2C_TypeDef *i2c, I2C_TransferSeq_TypeDef *seq)
 {
-
-  // Acquire I2C bus mutex 
-  #warning "Mutex acquire needed"
-
   /* If EEPROM respond NACK -> RETRY */
   retry:
 
@@ -159,7 +155,4 @@ static void EEPROMBusTransfer(I2C_TypeDef *i2c, I2C_TransferSeq_TypeDef *seq)
       goto retry;
     }
   }
-
-  // Release I2C bus mutex 
-  #warning "Mutex release needed"
 }

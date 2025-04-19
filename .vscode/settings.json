@@ -1,29 +1,32 @@
 {
-  "files.associations": {
-    "em_gpio.h": "c",
-    "em_device.h": "c",
-    "efm32zg210f32.h": "c",
-    "em_chip.h": "c",
-    "em_emu.h": "c",
-    "em_cmu.h": "c",
-    "stdbool.h": "c",
-    "sl_assert.h": "c",
-    "main.h": "c",
-    "eeprom.h": "c",
-    "em_i2c.h": "c",
-    "pins.h": "c",
-    "common_types.h": "c",
-    "eefs_filesys.h": "c",
-    "wscript": "python",
-    "segger_rtt.h": "c",
-    "log.h": "c",
-    "init.h": "c"
-  },
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
   "editor.formatOnSave": false,
   "cmake.configureOnOpen": false,
-  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
-  "cmake.configureSettings": {
-    "CMAKE_TOOLCHAIN_FILE": "toolchain.cmake",
-    "CMAKE_TRY_COMPILE_TARGET_TYPE": "STATIC_LIBRARY"
-  }
+
+  "C_Cpp.intelliSenseEngine": "default",
+  "C_Cpp.default.compilerPath": "C:/CrossCompilers/12.2.rel1_2023.7/bin/arm-none-eabi-gcc.exe",
+  "C_Cpp.default.cStandard": "c11",
+  "C_Cpp.default.cppStandard": "c++17",
+  "C_Cpp.default.intelliSenseMode": "gcc-arm",
+  "C_Cpp.default.includePath": [
+    "${workspaceFolder}/**",
+    "${workspaceFolder}/lib/**",
+    "${workspaceFolder}/inc/**"
+  ],
+  "C_Cpp.default.defines": [
+    "_DEBUG",
+    "UNICODE",
+    "_UNICODE",
+    "DEBUG_EFM=1",
+    "EFM32ZG210F32=1"
+  ],
+
+  "C_Cpp.doxygen.generateOnType": false,
+  "doxdocgen.generic.authorName": "anonymous",
+  "doxdocgen.generic.authorEmail": "undefined",
+  "files.associations": {
+    "i2c_wrappers.h": "c",
+    "lsensor.h": "c"
+  },
 }

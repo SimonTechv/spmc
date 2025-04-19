@@ -4,13 +4,15 @@ linkerfile = 'sdk/ldscript/linkerfile.ld'
 
 inc = {
     'segger_includes': [
-        'lib/SeggerRTT/Inc'
+        'lib/rtt'
     ],
 
     'sdk_includes' : [
         'sdk/platform/common/inc',
         'sdk/platform/common/toolchain/inc',
         'sdk/platform/emlib/inc',
+        'sdk/drivers',
+
     ],
 
     'cmsis_includes' : [
@@ -23,17 +25,18 @@ inc = {
     ],
 
     'lib_includes' : [
-        'lib/EEPROM/inc',
-        'lib/EEFS/inc',
+        'lib/eeprom',
+        'lib/filesystem/inc',
+        'lib/opt3001',
     ]
 }
 
 
 src = {
     'segger_sources': [
-        'lib/SeggerRTT/Src/SEGGER_RTT_ASM_ARMv7M.S',
-        'lib/SeggerRTT/Src/SEGGER_RTT_printf.c',
-        'lib/SeggerRTT/Src/SEGGER_RTT.c'
+        'lib/rtt/SEGGER_RTT_ASM_ARMv7M.S',
+        'lib/rtt/SEGGER_RTT_printf.c',
+        'lib/rtt/SEGGER_RTT.c'
     ],
 
     'sdk_sources' : [
@@ -46,6 +49,8 @@ src = {
         'sdk/platform/emlib/src/em_system.c',
         'sdk/platform/emlib/src/em_timer.c',
         'sdk/platform/emlib/src/em_i2c.c',
+
+        'sdk/drivers/i2c_wrappers.c',
     ],
 
     'cmsis_sources' : [
@@ -63,9 +68,10 @@ src = {
     ],
 
     'lib_sources' : [
-        'lib/EEPROM/src/eeprom.c',
-        'lib/EEFS/src/eefs_fileapi.c',
-        'lib/EEFS/src/eefs_filesys.c',
+        'lib/eeprom/eeprom.c',
+        'lib/filesystem/src/eefs_fileapi.c',
+        'lib/filesystem/src/eefs_filesys.c',
+        'lib/opt3001/lsensor.c',
     ]
 }
 

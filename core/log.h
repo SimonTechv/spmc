@@ -13,7 +13,7 @@
 #ifndef LOG_H
 #define LOG_H
 
-// #define LOG_EN
+#define LOG_EN
 
 #ifdef LOG_EN
     #include <SEGGER_RTT.h>

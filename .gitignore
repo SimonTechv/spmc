@@ -1,5 +1,4 @@
 build
 sys/waf3-*
-.vscode/settings.json
 .vscode/tasks.json
 .lock-*
