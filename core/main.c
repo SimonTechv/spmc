@@ -40,21 +40,13 @@ int main(void) {
 
   ConfigureIO();
   ConfigureI2C();
-  LOG("GPIO configured...\n");
+  
+  V5_ENA; LOG("TPS61040 enabled...\n");
 
-  V5_ENA;
-  LOG("TPS61040 enabled...\n");
-
-  OPT3001_Init();
-  LOG("Light sensor init\n");
-  LOG("Light sensor: MAN_ID : 0x%x\n", OPT3001_ReadManufacturerID());
-  LOG("Light sensor: DEV_ID : 0x%x\n", OPT3001_ReadDeviceID());
-
-  OPT3001_Init();
+  LOG("Light sensor init... [%s]\n", (OPT3001_Init() == 0) ? ("OK") : ("ERR"));
 
   for (;;) {
-    for(uint32_t i = 0; i  < 10000000; i++) {}
-
+    for(uint32_t i = 0; i  < 3000000; i++) {}
     float lux = OPT3001_ReadLux();
     LOG("Light sensor: %d,%d lux\n", (int16_t)lux,  (int16_t)((int32_t)(lux * 100.0f) % 100));
   }

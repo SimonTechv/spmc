@@ -15,7 +15,6 @@
 
 
 #include <stdint.h>
-
 #include <pins.h>
 
 
@@ -111,18 +110,19 @@
 
 
 /**
- * @brief 
+ * @brief Read Lux value
  * 
- * @return float 
+ * @return float floating point measured lux value
  */
 float OPT3001_ReadLux(void);
 
 
 /**
- * @brief 
+ * @brief Initialize opt3001 light sensor
  * 
+ * @return int32_t (0 = SUCCESS, -1 = ERROR)
  */
-void OPT3001_Init(void);
+int32_t OPT3001_Init(void);
 
 
 /**
@@ -134,7 +134,7 @@ uint16_t OPT3001_ReadManufacturerID(void);
 
 
 /**
- * @brief Get Device ID Register
+ * @brief Get Device ID Register value
  * 
  * @return uint16_t device id
  */
@@ -142,17 +142,9 @@ uint16_t OPT3001_ReadDeviceID(void);
 
 
 /**
- * @brief 
+ * @brief Get Config Register value
  * 
- * @return uint16_t 
- */
-uint16_t OPT3001_ReadDeviceID(void);
-
-
-/**
- * @brief 
- * 
- * @return uint16_t 
+ * @return uint16_t current configuration register value
  */
 uint16_t OPT3001_ReadConfigReg(void);
 

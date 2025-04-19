@@ -15,12 +15,24 @@ float OPT3001_ReadLux(void) {
 }
 
 
-void OPT3001_Init(void)
+int32_t OPT3001_Init(void)
 {
-  uint16_t reg = OPT3001_CONFIG(OPT3001_RN_AUTO, OPT3001_CT_800MS, OPT3001_M_CONTINUOUS, \
-    OPT3001_L_LATCH, OPT3001_POL_ACTIVE_HIGH, OPT3001_FC_1);
+  /** Check sensor id */
+  if (OPT3001_ReadManufacturerID() != OPT3001_MFG_ID || OPT3001_ReadDeviceID() != OPT3001_DEV_ID)
+  {
+    return -1;
+  }
 
-  LightSensorWriteRegister(OPT3001_ADDR, OPT3001_REG_CONFIG, reg);
+  /** Setup sensor */
+  int32_t ret = LightSensorWriteRegister(OPT3001_ADDR, OPT3001_REG_CONFIG, OPT3001_CONFIG(
+    OPT3001_RN_AUTO, \
+    OPT3001_CT_100MS, \
+    OPT3001_M_CONTINUOUS, \
+    OPT3001_L_LATCH, \
+    OPT3001_POL_ACTIVE_HIGH, \
+    OPT3001_FC_1));
+
+  return ret;
 }
 
 
