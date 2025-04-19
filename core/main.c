@@ -45,13 +45,18 @@ int main(void) {
   V5_ENA;
   LOG("TPS61040 enabled...\n");
 
-  LOG("Try read data to light sensor register...\n");
+  OPT3001_Init();
+  LOG("Light sensor init\n");
   LOG("Light sensor: MAN_ID : 0x%x\n", OPT3001_ReadManufacturerID());
   LOG("Light sensor: DEV_ID : 0x%x\n", OPT3001_ReadDeviceID());
 
+  OPT3001_Init();
+
   for (;;) {
     for(uint32_t i = 0; i  < 10000000; i++) {}
-    // LOG("Never gonna give you up\n");
+
+    float lux = OPT3001_ReadLux();
+    LOG("Light sensor: %d,%d lux\n", (int16_t)lux,  (int16_t)((int32_t)(lux * 100.0f) % 100));
   }
 }
 

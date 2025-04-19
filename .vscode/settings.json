@@ -27,6 +27,7 @@
   "doxdocgen.generic.authorEmail": "undefined",
   "files.associations": {
     "i2c_wrappers.h": "c",
-    "lsensor.h": "c"
+    "lsensor.h": "c",
+    "main.h": "c"
   },
 }
