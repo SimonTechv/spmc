@@ -11,3 +11,4 @@
 1. This is high efficient energy harvesing module for your DIY projects (ideal for environmental monitoring applications.)
 2. Module based on the Texas Instruments BQ25570RGR. It is an ultra-low-power energy harvester power management IC designed to efficiently extract and manage microwatts (µW) to milliwatts (mW) of power from various high-impedance DC energy sources. (Photovoltaic (Solar) Cells, Thermal Electric Generators (TEGs), Piezoelectric Generators e.t.c...)
 3. Also, the module contains: eeprom memory, light sensor, low-power microcontroller, pressure and height sensor, voltage converter. Also planned is a revision with a lightning discharge sensor, accelerometer-gyroscope, radio transmitting module.
+4. To accumulate energy, a supercapacitor, lithium titanate battery, lithium-ion battery can be used. Any chemical voltage source with the ability to recharge with a range of operating voltages from 2 to 5 volts.
