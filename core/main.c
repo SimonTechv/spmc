@@ -15,6 +15,7 @@
 #include <init.h>
 #include <pins.h>
 #include <lsensor.h>
+#include <em_emu.h>
 
 #include "main.h"
 
@@ -41,7 +42,9 @@ int main(void) {
   ConfigureIO();
   ConfigureI2C();
   
-  V5_ENA; LOG("TPS61040 enabled...\n");
+  // V5_ENA; LOG("TPS61040 enabled...\n");
+
+  V5_DIS;
 
   LOG("Light sensor init... [%s]\n", (OPT3001_Init() == 0) ? ("OK") : ("ERR"));
 
@@ -49,6 +52,10 @@ int main(void) {
     for(uint32_t i = 0; i  < 3000000; i++) {}
     float lux = OPT3001_ReadLux();
     LOG("Light sensor: %d,%d lux\n", (int16_t)lux,  (int16_t)((int32_t)(lux * 100.0f) % 100));
+
+    // LOG("EM2\n");
+    // EMU_EnterEM2(false);
+    // LOG("OOPS!!!\n");
   }
 }
 
